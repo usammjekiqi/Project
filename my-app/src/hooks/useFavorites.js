@@ -26,6 +26,7 @@ export default function useFavorites() {
       JSON.stringify(updated)
     );
   };
+
   const removeFavorite = async (id) => {
     const updated = favorites.filter(
       (item) => item.idDrink !== id
@@ -43,7 +44,9 @@ export default function useFavorites() {
     return favorites.some(
       (item) => item.idDrink === id
     );
-  };return {
+  };
+
+  return {
     favorites,
     addFavorite,
     removeFavorite,

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import {
   View,
   Text,
@@ -69,12 +68,10 @@ const styles = StyleSheet.create({
   category: {
     color: "#FF8C00",
     paddingHorizontal: 16,
-    marginBottom: 10,
   },
 
   instructions: {
     color: "#ddd",
-    fontSize: 16,
     lineHeight: 24,
     padding: 16,
   },

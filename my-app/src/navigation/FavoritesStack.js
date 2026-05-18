@@ -17,6 +17,7 @@ export default function FavoritesStack() {
       <Stack.Screen
         name="Details"
         component={DetailsScreen}
-      />  </Stack.Navigator>
-      );
-    }
+      />
+    </Stack.Navigator>
+  );
+}

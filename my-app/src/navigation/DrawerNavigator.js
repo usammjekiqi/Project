@@ -1,10 +1,11 @@
+
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
-import HomeStack from "../../HomeStack";
-import CategoriesStack from "../../CategoriesStack";
-import FavoritesStack from "../../FavoritesStack";
-import AboutScreen from "../../screens/AboutScreen";
+import HomeStack from "./HomeStack";
+import CategoriesStack from "./CategoriesStack";
+import FavoritesStack from "./FavoritesStack";
+import AboutScreen from "../screens/AboutScreen";
 
 const Drawer = createDrawerNavigator();
 

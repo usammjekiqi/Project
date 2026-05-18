@@ -34,4 +34,10 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 16,
   },
+
+  text: {
+    color: "#ccc",
+    textAlign: "center",
+    lineHeight: 24,
+  },
 });

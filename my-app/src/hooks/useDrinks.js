@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import {
   getRandomDrink,
@@ -23,7 +24,10 @@ export default function useDrinks() {
   };
 
   const search = async (query) => {
-    if (!query) return;
+    if (!query) {
+      setSearchResults([]);
+      return;
+    }
 
     setLoading(true);
 

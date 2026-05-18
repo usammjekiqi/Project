@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import {
   View,
   Text,
@@ -14,7 +15,9 @@ import {
 
 import DrinkCard from "../components/DrinkCard";
 
-export default function CategoriesScreen({ navigation }) {
+export default function CategoriesScreen({
+  navigation,
+}) {
   const [categories, setCategories] = useState([]);
   const [drinks, setDrinks] = useState([]);
 
@@ -24,20 +27,25 @@ export default function CategoriesScreen({ navigation }) {
 
   const loadCategories = async () => {
     const data = await getCategories();
-    setCategories(data);
+
+    setCategories(data || []);
   };
 
   const handleCategory = async (category) => {
     const data = await filterByCategory(category);
-    setDrinks(data);
+
+    setDrinks(data || []);
   };
 
   return (
     <View style={styles.container}>
       <FlatList
         horizontal
+        showsHorizontalScrollIndicator={false}
         data={categories}
-        keyExtractor={(item, index) => index.toString()}
+        keyExtractor={(item, index) =>
+          index.toString()
+        }
         renderItem={({ item }) => (
           <TouchableOpacity
             style={styles.categoryBtn}
@@ -79,9 +87,15 @@ const styles = StyleSheet.create({
 
   categoryBtn: {
     backgroundColor: "#181818",
-    padding: 12,
-    borderRadius: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    borderRadius: 12,
     marginRight: 10,
-    marginBottom: 16,
+    height: 45,
+  },
+
+  categoryText: {
+    color: "#fff",
+    fontWeight: "600",
   },
 });

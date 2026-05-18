@@ -25,10 +25,7 @@ export const getCategories = async () => {
 };
 
 export const filterByCategory = async (category) => {
-  const response = await fetch(
-    `${BASE_URL}/filter.php?c=${category}`
-  );
-
+  const response = await fetch(`${BASE_URL}/filter.php?c=${category}`);
   const data = await response.json();
   return data.drinks;
 };
